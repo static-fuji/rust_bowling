@@ -9,7 +9,7 @@ pub fn answer(score_str: &str) -> u32 {
         let frame = frames[frame_index];
         
         if frame == "X" {
-            total_score += 10 + bonus_for_strike(&frames, frame_index);
+            total_score += 10 + strike_bonus (&frames, frame_index);
             frame_index += 1;
         } else {
             let frame = frames[frame_index];

@@ -651,5 +651,21 @@
       2,
       764043
     ]
+  },
+  {
+    "duration": 0.846396,
+    "colour": "amber",
+    "predicted": "none",
+    "revert_if_wrong": "off",
+    "index": 41,
+    "time": [
+      2024,
+      11,
+      5,
+      16,
+      12,
+      26,
+      959538
+    ]
   }
 ]
