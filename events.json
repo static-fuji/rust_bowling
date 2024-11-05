@@ -347,5 +347,21 @@
       27,
       875988
     ]
+  },
+  {
+    "duration": 0.963051,
+    "colour": "amber",
+    "predicted": "none",
+    "revert_if_wrong": "off",
+    "index": 22,
+    "time": [
+      2024,
+      11,
+      5,
+      15,
+      46,
+      3,
+      806274
+    ]
   }
 ]
