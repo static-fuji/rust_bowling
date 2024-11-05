@@ -24,7 +24,7 @@ pub fn answer(score_str: &str) -> u32 {
 
 fn parse_roll(roll: char) -> u32 {
     match roll {
-        "/"=>0
+        '/'=>0
     }
 }
 

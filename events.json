@@ -443,5 +443,21 @@
       56,
       793575
     ]
+  },
+  {
+    "duration": 0.928,
+    "colour": "amber",
+    "predicted": "none",
+    "revert_if_wrong": "off",
+    "index": 28,
+    "time": [
+      2024,
+      11,
+      5,
+      15,
+      54,
+      13,
+      118807
+    ]
   }
 ]
