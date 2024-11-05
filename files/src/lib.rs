@@ -24,7 +24,7 @@ pub fn answer (score_str: &str) -> u32 {
 }
 
 fn parse_roll(roll: char) -> u32 {
-    roll.to_digit(10).unwrap_or(0),
+    roll.to_digit(10).unwrap_or(0)
 }
 
 fn spare_bonus (frames: &[&str], frame_index: usize) -> u32 {

@@ -1,10 +1,4 @@
    Compiling hiker v0.1.0 (/sandbox)
-error: expected one of `.`, `;`, `?`, `}`, or an operator, found `,`
-  --> src/lib.rs:27:35
-   |
-27 |     roll.to_digit(10).unwrap_or(0),
-   |                                   ^ expected one of `.`, `;`, `?`, `}`, or an operator
-
 error[E0425]: cannot find function `perse_roll` in this scope
   --> src/lib.rs:10:26
    |
@@ -24,6 +18,6 @@ error[E0425]: cannot find function `perce_roll` in this scope
    | -------------------------------- similarly named function `parse_roll` defined here
 
 For more information about this error, try `rustc --explain E0425`.
-error: could not compile `hiker` (lib test) due to 3 previous errors
+error: could not compile `hiker` (lib test) due to 2 previous errors
 warning: build failed, waiting for other jobs to finish...
-error: could not compile `hiker` (lib) due to 3 previous errors
+error: could not compile `hiker` (lib) due to 2 previous errors
