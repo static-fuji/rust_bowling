@@ -1,5 +1,5 @@
 #![cfg_attr(feature = "strict", deny(warnings))]
 
-pub fn answer() -> i32 {
-    6 * 7
+pub fn answer(score_str: &str) -> i32 {
+    
 }
