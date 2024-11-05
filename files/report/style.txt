@@ -1,12 +1,20 @@
     Checking hiker v0.1.0 (/sandbox)
 warning: called `.nth(0)` on a `std::iter::Iterator`, when `.next()` is equivalent
-  --> src/lib.rs:10:26
+  --> src/lib.rs:10:37
    |
-10 |         let first_roll = frame.chars().nth(0).unwrap();
-   |                          ^^^^^^^^^^^^^^^^^^^^ help: try calling `.next()` instead of `.nth(0)`: `frame.chars().next()`
+10 |         let first_roll = parse_roll(frame.chars().nth(0).unwrap());
+   |                                     ^^^^^^^^^^^^^^^^^^^^ help: try calling `.next()` instead of `.nth(0)`: `frame.chars().next()`
    |
    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#iter_nth_zero
    = note: `#[warn(clippy::iter_nth_zero)]` on by default
 
-warning: `hiker` (lib) generated 1 warning (run `cargo clippy --fix --lib -p hiker` to apply 1 suggestion)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.17s
+warning: called `.nth(0)` on a `std::iter::Iterator`, when `.next()` is equivalent
+  --> src/lib.rs:38:16
+   |
+38 |     parse_roll(frame.chars().nth(0).unwrap_or('0'))
+   |                ^^^^^^^^^^^^^^^^^^^^ help: try calling `.next()` instead of `.nth(0)`: `frame.chars().next()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#iter_nth_zero
+
+warning: `hiker` (lib) generated 2 warnings (run `cargo clippy --fix --lib -p hiker` to apply 2 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.23s
