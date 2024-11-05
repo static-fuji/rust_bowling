@@ -1,21 +1,4 @@
    Compiling hiker v0.1.0 (/sandbox)
-error[E0277]: can't compare `&str` with `char`
-  --> src/lib.rs:11:18
-   |
-11 |         if frame == 'X' {
-   |                  ^^ no implementation for `&str == char`
-   |
-   = help: the trait `PartialEq<char>` is not implemented for `&str`
-   = help: the following other types implement trait `PartialEq<Rhs>`:
-             `&'a str` implements `PartialEq<OsString>`
-             `&'a str` implements `PartialEq<String>`
-             `&'b str` implements `PartialEq<Cow<'a, str>>`
-             `str` implements `PartialEq<Cow<'a, str>>`
-             `str` implements `PartialEq<OsStr>`
-             `str` implements `PartialEq<OsString>`
-             `str` implements `PartialEq<String>`
-             `str` implements `PartialEq`
-
 error[E0425]: cannot find function `bonus_for_strike` in this scope
   --> src/lib.rs:12:33
    |
@@ -28,8 +11,7 @@ error[E0425]: cannot find function `sum_rolls_in_frame` in this scope
 42 |             bonus += sum_rolls_in_frame(next_frame);
    |                      ^^^^^^^^^^^^^^^^^^ not found in this scope
 
-Some errors have detailed explanations: E0277, E0425.
-For more information about an error, try `rustc --explain E0277`.
-error: could not compile `hiker` (lib) due to 3 previous errors
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `hiker` (lib) due to 2 previous errors
 warning: build failed, waiting for other jobs to finish...
-error: could not compile `hiker` (lib test) due to 3 previous errors
+error: could not compile `hiker` (lib test) due to 2 previous errors
