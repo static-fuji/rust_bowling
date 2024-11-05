@@ -1,5 +1,21 @@
    Compiling hiker v0.1.0 (/sandbox)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.59s
-     Running unittests src/lib.rs (target/debug/deps/hiker-2b14b2fd0ea5c14e)
-     Running tests/lib_tests.rs (target/debug/deps/lib_tests-1ae1719d59b72724)
-   Doc-tests hiker
+error[E0061]: this function takes 0 arguments but 1 argument was supplied
+ --> tests/lib_tests.rs:7:20
+  |
+7 |     assert_eq!(10, hiker::answer("|12|34|"));
+  |                    ^^^^^^^^^^^^^ --------- unexpected argument of type `&'static str`
+  |
+note: function defined here
+ --> /sandbox/src/lib.rs:3:8
+  |
+3 | pub fn answer() -> i32 {
+  |        ^^^^^^
+help: remove the extra argument
+  |
+7 -     assert_eq!(10, hiker::answer("|12|34|"));
+7 +     assert_eq!(10, hiker::answer());
+  |
+
+For more information about this error, try `rustc --explain E0061`.
+error: could not compile `hiker` (test "lib_tests") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
