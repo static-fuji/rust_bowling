@@ -14,4 +14,5 @@ fn life_the_universe_and_everything() {
     assert_eq!(300, hiker::answer("X|X|X|X|X|X|X|X|X|X||XX"));
     assert_eq!(90, hiker::answer("9-|9-|9-|9-|9-|9-|9-|9-|9-|9-||"));
     assert_eq!(150, hiker::answer("5/|5/|5/|5/|5/|5/|5/|5/|5/|5/||5"));
+    assert_eq!(167, hiker::answer("X|7/|9-|X|-8|8/|-6|X|X|X||81"));
 }
