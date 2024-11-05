@@ -13,7 +13,7 @@ pub fn answer (score_str: &str) -> u32 {
         total_score += first_roll + second_roll;
         
         if  second_roll == 10 - first_roll {
-            total_score += bonus_for_spare(&frames, frame_index);
+            total_score += spare_bonus (&frames, frame_index);
             total_score += 10 - first_roll;
         }
         
@@ -33,4 +33,8 @@ fn spare_bonus (frames: &[&str], frame_index: usize) -> u32 {
     } else {
         0
     }
+}
+
+fn first_roll_value(frame: &str) -> u32 {
+    parse_roll(frame.chars().nth(0).unwrap_or('0'))
 }

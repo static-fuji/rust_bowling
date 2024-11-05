@@ -23,19 +23,7 @@ error[E0425]: cannot find function `perce_roll` in this scope
 26 | fn parse_roll(roll: char) -> u32 {
    | -------------------------------- similarly named function `parse_roll` defined here
 
-error[E0425]: cannot find function `bonus_for_spare` in this scope
-  --> src/lib.rs:16:28
-   |
-16 |             total_score += bonus_for_spare(&frames, frame_index);
-   |                            ^^^^^^^^^^^^^^^ not found in this scope
-
-error[E0425]: cannot find function `first_roll_value` in this scope
-  --> src/lib.rs:32:9
-   |
-32 |         first_roll_value(next_frame)
-   |         ^^^^^^^^^^^^^^^^ not found in this scope
-
 For more information about this error, try `rustc --explain E0425`.
-error: could not compile `hiker` (lib test) due to 5 previous errors
+error: could not compile `hiker` (lib test) due to 3 previous errors
 warning: build failed, waiting for other jobs to finish...
-error: could not compile `hiker` (lib) due to 5 previous errors
+error: could not compile `hiker` (lib) due to 3 previous errors
