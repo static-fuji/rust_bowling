@@ -107,5 +107,21 @@
       2,
       18105
     ]
+  },
+  {
+    "duration": 0.868591,
+    "colour": "amber",
+    "predicted": "none",
+    "revert_if_wrong": "off",
+    "index": 7,
+    "time": [
+      2024,
+      11,
+      5,
+      14,
+      28,
+      12,
+      311196
+    ]
   }
 ]

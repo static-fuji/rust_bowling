@@ -1,6 +1,6 @@
 #![cfg_attr(feature = "strict", deny(warnings))]
 
-pub fn answer(score_str: &str) -> &str {
+pub fn answer(score_str: &str) -> i32 {
     let mut total_score = 0;
     let mut frame_index = 0;
     let frames: Vec<&str> = score_str.split('|').filter(|&s| !s.is_empty()).collect();

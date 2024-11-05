@@ -17,17 +17,7 @@ error[E0425]: cannot find function `bonus_for_spare` in this scope
 16 |             total_score += bonus_for_spare(&frames, frame_index);
    |                            ^^^^^^^^^^^^^^^ not found in this scope
 
-error[E0308]: mismatched types
-  --> src/lib.rs:20:5
-   |
-3  | pub fn answer(score_str: &str) -> &str {
-   |                                   ---- expected `&str` because of return type
-...
-20 |     total_score
-   |     ^^^^^^^^^^^ expected `&str`, found integer
-
-Some errors have detailed explanations: E0308, E0425.
-For more information about an error, try `rustc --explain E0308`.
-error: could not compile `hiker` (lib) due to 4 previous errors
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `hiker` (lib) due to 3 previous errors
 warning: build failed, waiting for other jobs to finish...
-error: could not compile `hiker` (lib test) due to 4 previous errors
+error: could not compile `hiker` (lib test) due to 3 previous errors
