@@ -7,7 +7,7 @@ pub fn answer(score_str: &str) -> u32 {
 
     while frame_index < frames.len() && frame_index < 10 {
         let frame = frames[frame_index];
-        let first_roll = parse_roll(frame.chars().next(0).unwrap());
+        let first_roll = parse_roll(frame.chars().next().unwrap());
         let second_roll = parse_roll(frame.chars().nth(1).unwrap_or('0'));
 
         total_score += first_roll + second_roll;
@@ -35,5 +35,5 @@ fn spare_bonus(frames: &[&str], frame_index: usize) -> u32 {
 }
 
 fn first_roll_value(frame: &str) -> u32 {
-    parse_roll(frame.chars().next(0).unwrap_or('0'))
+    parse_roll(frame.chars().next().unwrap_or('0'))
 }
