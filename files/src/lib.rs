@@ -8,7 +8,7 @@ pub fn answer (score_str: &str) -> u32 {
     while frame_index < frames.len() && frame_index < 10 {
         let frame = frames[frame_index];
         let first_roll = parse_roll(frame.chars().nth(0).unwrap());
-        let second_roll = parce_roll(frame.chars().nth(1).unwrap_or('0'));
+        let second_roll = parse_roll(frame.chars().nth(1).unwrap_or('0'));
 
         total_score += first_roll + second_roll;
         
