@@ -1,10 +1,41 @@
    Compiling hiker v0.1.0 (/sandbox)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.87s
-     Running unittests src/lib.rs (target/debug/deps/hiker-2b14b2fd0ea5c14e)
-     Running tests/lib_tests.rs (target/debug/deps/lib_tests-1ae1719d59b72724)
-thread 'life_the_universe_and_everything' panicked at tests/lib_tests.rs:8:5:
-assertion `left == right` failed
-  left: 20
- right: 17
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-error: test failed, to rerun pass `--test lib_tests`
+error: expected one of `.`, `;`, `?`, `}`, or an operator, found `,`
+  --> src/lib.rs:27:35
+   |
+27 |     roll.to_digit(10).unwrap_or(0),
+   |                                   ^ expected one of `.`, `;`, `?`, `}`, or an operator
+
+error[E0425]: cannot find function `perse_roll` in this scope
+  --> src/lib.rs:10:26
+   |
+10 |         let first_roll = perse_roll(frame.chars().nth(0).unwrap());
+   |                          ^^^^^^^^^^ help: a function with a similar name exists: `parse_roll`
+...
+26 | fn parse_roll(roll: char) -> u32 {
+   | -------------------------------- similarly named function `parse_roll` defined here
+
+error[E0425]: cannot find function `perce_roll` in this scope
+  --> src/lib.rs:11:27
+   |
+11 |         let second_roll = perce_roll(frame.chars().nth(1).unwrap_or('0'));
+   |                           ^^^^^^^^^^ help: a function with a similar name exists: `parse_roll`
+...
+26 | fn parse_roll(roll: char) -> u32 {
+   | -------------------------------- similarly named function `parse_roll` defined here
+
+error[E0425]: cannot find function `bonus_for_spare` in this scope
+  --> src/lib.rs:16:28
+   |
+16 |             total_score += bonus_for_spare(&frames, frame_index);
+   |                            ^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `first_roll_value` in this scope
+  --> src/lib.rs:32:9
+   |
+32 |         first_roll_value(next_frame)
+   |         ^^^^^^^^^^^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `hiker` (lib test) due to 5 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `hiker` (lib) due to 5 previous errors
