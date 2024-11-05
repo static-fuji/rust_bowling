@@ -1,23 +1,13 @@
    Compiling hiker v0.1.0 (/sandbox)
-error[E0425]: cannot find function `parse_roll` in this scope
-  --> src/lib.rs:10:26
+error[E0369]: cannot add `char` to `char`
+  --> src/lib.rs:13:35
    |
-10 |         let first_roll = parse_roll(frame.chars().nth(0).unwrap());
-   |                          ^^^^^^^^^^ not found in this scope
+13 |         total_score += first_roll + second_roll;
+   |                        ---------- ^ ----------- char
+   |                        |
+   |                        char
 
-error[E0425]: cannot find function `parse_roll` in this scope
-  --> src/lib.rs:11:27
-   |
-11 |         let second_roll = parse_roll(frame.chars().nth(1).unwrap_or('0'));
-   |                           ^^^^^^^^^^ help: a local variable with a similar name exists: `first_roll`
-
-error[E0425]: cannot find function `bonus_for_spare` in this scope
-  --> src/lib.rs:16:28
-   |
-16 |             total_score += bonus_for_spare(&frames, frame_index);
-   |                            ^^^^^^^^^^^^^^^ not found in this scope
-
-For more information about this error, try `rustc --explain E0425`.
-error: could not compile `hiker` (lib) due to 3 previous errors
+For more information about this error, try `rustc --explain E0369`.
+error: could not compile `hiker` (lib test) due to 1 previous error
 warning: build failed, waiting for other jobs to finish...
-error: could not compile `hiker` (lib test) due to 3 previous errors
+error: could not compile `hiker` (lib) due to 1 previous error
