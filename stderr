@@ -1,31 +1,18 @@
    Compiling hiker v0.1.0 (/sandbox)
-error[E0599]: no method named `to_digit` found for enum `Option` in the current scope
-  --> src/lib.rs:10:47
+error[E0425]: cannot find value `second_rollnum` in this scope
+  --> src/lib.rs:13:67
    |
-10 |         let first_roll = frame.chars().nth(0).to_digit(10).unwrap();
-   |                                               ^^^^^^^^ method not found in `Option<char>`
-   |
-note: the method `to_digit` exists on the type `char`
-  --> /rustc/eeb90cda1969383f56a2637cbd3037bdf598841c/library/core/src/char/methods.rs:382:5
-help: consider using `Option::expect` to unwrap the `char` value, panicking if the value is an `Option::None`
-   |
-10 |         let first_roll = frame.chars().nth(0).expect("REASON").to_digit(10).unwrap();
-   |                                              +++++++++++++++++
+13 |         total_score += first_roll.num.to_digit(10).unwrap_or(0) + second_rollnum.to_digit(10).unwrap_or(0);
+   |                                                                   ^^^^^^^^^^^^^^ help: a local variable with a similar name exists: `second_roll`
 
-error[E0599]: no method named `to_digit` found for enum `Option` in the current scope
-  --> src/lib.rs:11:48
+error[E0610]: `char` is a primitive type and therefore doesn't have fields
+  --> src/lib.rs:13:35
    |
-11 |         let second_roll = frame.chars().nth(1).to_digit(10).unwrap_or('0');
-   |                                                ^^^^^^^^ method not found in `Option<char>`
-   |
-note: the method `to_digit` exists on the type `char`
-  --> /rustc/eeb90cda1969383f56a2637cbd3037bdf598841c/library/core/src/char/methods.rs:382:5
-help: consider using `Option::expect` to unwrap the `char` value, panicking if the value is an `Option::None`
-   |
-11 |         let second_roll = frame.chars().nth(1).expect("REASON").to_digit(10).unwrap_or('0');
-   |                                               +++++++++++++++++
+13 |         total_score += first_roll.num.to_digit(10).unwrap_or(0) + second_rollnum.to_digit(10).unwrap_or(0);
+   |                                   ^^^
 
-For more information about this error, try `rustc --explain E0599`.
+Some errors have detailed explanations: E0425, E0610.
+For more information about an error, try `rustc --explain E0425`.
 error: could not compile `hiker` (lib test) due to 2 previous errors
 warning: build failed, waiting for other jobs to finish...
 error: could not compile `hiker` (lib) due to 2 previous errors

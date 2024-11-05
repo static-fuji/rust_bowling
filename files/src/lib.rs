@@ -7,10 +7,10 @@ pub fn answer(score_str: &str) -> i32 {
 
     while frame_index < frames.len() && frame_index < 10 {
         let frame = frames[frame_index];
-        let first_roll = frame.chars().nth(0).to_digit(10).unwrap();
-        let second_roll = frame.chars().nth(1).to_digit(10).unwrap_or('0');
+        let first_roll = frame.chars().nth(0).unwrap();
+        let second_roll = frame.chars().nth(1).unwrap_or('0');
 
-        total_score += first_roll + second_roll;
+        total_score += first_roll.num.to_digit(10).unwrap_or(0) + second_rollnum.to_digit(10).unwrap_or(0);
 
         frame_index += 1;
     }

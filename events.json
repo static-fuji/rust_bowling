@@ -171,5 +171,21 @@
       6,
       222754
     ]
+  },
+  {
+    "duration": 0.875103,
+    "colour": "amber",
+    "predicted": "none",
+    "revert_if_wrong": "off",
+    "index": 11,
+    "time": [
+      2024,
+      11,
+      5,
+      15,
+      20,
+      47,
+      919183
+    ]
   }
 ]
