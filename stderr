@@ -1,5 +1,10 @@
    Compiling hiker v0.1.0 (/sandbox)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.00s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.95s
      Running unittests src/lib.rs (target/debug/deps/hiker-2b14b2fd0ea5c14e)
      Running tests/lib_tests.rs (target/debug/deps/lib_tests-1ae1719d59b72724)
-   Doc-tests hiker
+thread 'life_the_universe_and_everything' panicked at tests/lib_tests.rs:18:5:
+assertion `left == right` failed
+  left: 20
+ right: 30
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: test failed, to rerun pass `--test lib_tests`
