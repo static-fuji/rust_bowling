@@ -1,0 +1,21 @@
+{
+  "display_name": "Rust 1.81, test",
+  "image_name": "ghcr.io/cyber-dojo-languages/rust_test:67ed02f",
+  "filename_extension": [
+    ".rs"
+  ],
+  "max_seconds": 10,
+  "tab_size": 4,
+  "exercise": "Bowling Game",
+  "version": 2,
+  "created": [
+    2024,
+    11,
+    5,
+    14,
+    20,
+    33,
+    656826
+  ],
+  "id": "7K21qv"
+}
