@@ -11,5 +11,21 @@
       33,
       656826
     ]
+  },
+  {
+    "duration": 1.957481,
+    "colour": "green",
+    "predicted": "none",
+    "revert_if_wrong": "off",
+    "index": 1,
+    "time": [
+      2024,
+      11,
+      5,
+      14,
+      20,
+      55,
+      249729
+    ]
   }
 ]

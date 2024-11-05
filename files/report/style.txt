@@ -1,0 +1,2 @@
+    Checking hiker v0.1.0 (/sandbox)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.17s
