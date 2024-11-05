@@ -7,9 +7,9 @@ pub fn answer(score_str: &str) -> u32 {
 
     while frame_index < frames.len() && frame_index < 10 {
         let frame = frames[frame_index];
-        
+
         if frame == "X" {
-            total_score += 10 + strike_bonus (&frames, frame_index);
+            total_score += 10 + strike_bonus(&frames, frame_index);
             frame_index += 1;
         } else {
             let frame = frames[frame_index];
@@ -28,7 +28,7 @@ pub fn answer(score_str: &str) -> u32 {
     total_score
 }
 
-fn strike_bonus (frames: &[&str], frame_index: usize) -> u32 {
+fn strike_bonus(frames: &[&str], frame_index: usize) -> u32 {
     let mut bonus = 0;
 
     if let Some(next_frame) = frames.get(frame_index + 1) {
@@ -39,11 +39,15 @@ fn strike_bonus (frames: &[&str], frame_index: usize) -> u32 {
                 bonus += first_roll_value(next_next_frame);
             }
         } else {
-            bonus += sum_rolls_in_frame(next_frame);
+            bonus += sum_rolls(next_frame);
         }
     }
 
     bonus
+}
+
+fn sum_rolls(frame: &str) -> u32 {
+    frame.chars().map(parse_roll).sum()
 }
 
 fn parse_roll(roll: char) -> u32 {
