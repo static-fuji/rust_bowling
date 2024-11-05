@@ -6,6 +6,6 @@ error[E0425]: cannot find value `score` in this scope
   |     ^^^^^ not found in this scope
 
 For more information about this error, try `rustc --explain E0425`.
-error: could not compile `hiker` (lib test) due to 1 previous error
-warning: build failed, waiting for other jobs to finish...
 error: could not compile `hiker` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `hiker` (lib test) due to 1 previous error
