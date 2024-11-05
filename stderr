@@ -14,20 +14,6 @@ help: remove the extra argument
    |
 
 error[E0061]: this method takes 0 arguments but 1 argument was supplied
-  --> src/lib.rs:11:52
-   |
-11 |         let second_roll = parse_roll(frame.chars().next(1).unwrap_or('0'));
-   |                                                    ^^^^ - unexpected argument of type `{integer}`
-   |
-note: method defined here
-  --> /rustc/eeb90cda1969383f56a2637cbd3037bdf598841c/library/core/src/iter/traits/iterator.rs:80:8
-help: remove the extra argument
-   |
-11 -         let second_roll = parse_roll(frame.chars().next(1).unwrap_or('0'));
-11 +         let second_roll = parse_roll(frame.chars().next().unwrap_or('0'));
-   |
-
-error[E0061]: this method takes 0 arguments but 1 argument was supplied
   --> src/lib.rs:38:30
    |
 38 |     parse_roll(frame.chars().next(0).unwrap_or('0'))
@@ -42,6 +28,6 @@ help: remove the extra argument
    |
 
 For more information about this error, try `rustc --explain E0061`.
-error: could not compile `hiker` (lib) due to 3 previous errors
+error: could not compile `hiker` (lib test) due to 2 previous errors
 warning: build failed, waiting for other jobs to finish...
-error: could not compile `hiker` (lib test) due to 3 previous errors
+error: could not compile `hiker` (lib) due to 2 previous errors
