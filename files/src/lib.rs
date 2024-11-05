@@ -12,8 +12,8 @@ pub fn answer(score_str: &str) -> u32 {
 
         total_score += first_roll + second_roll;
 
-        if second_roll == 10 - first_roll {
-            total_score += spare_bonus(&frames, frame_index);
+        if frame.chars().nth(1).unwrap_or('0') == '/' {
+            total_score += spare_bonus(&frames, frame_index) + 10 - first_roll;
         }
 
         frame_index += 1;
@@ -23,7 +23,9 @@ pub fn answer(score_str: &str) -> u32 {
 }
 
 fn parse_roll(roll: char) -> u32 {
-    roll.to_digit(10).unwrap_or(0)
+    match roll {
+        "/"=>0
+    }
 }
 
 fn spare_bonus(frames: &[&str], frame_index: usize) -> u32 {
