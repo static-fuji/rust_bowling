@@ -1,18 +1,10 @@
    Compiling hiker v0.1.0 (/sandbox)
-error[E0004]: non-exhaustive patterns: `'\0'..='.'`, `'0'..='\u{d7ff}'` and `'\u{e000}'..='\u{10ffff}'` not covered
-  --> src/lib.rs:26:11
-   |
-26 |     match roll {
-   |           ^^^^ patterns `'\0'..='.'`, `'0'..='\u{d7ff}'` and `'\u{e000}'..='\u{10ffff}'` not covered
-   |
-   = note: the matched value is of type `char`
-help: ensure that all possible cases are being handled by adding a match arm with a wildcard pattern, a match arm with multiple or-patterns as shown, or multiple match arms
-   |
-27 ~         '/'=>0,
-28 +         '\0'..='.' | '0'..='\u{d7ff}' | '\u{e000}'..='\u{10ffff}' => todo!()
-   |
-
-For more information about this error, try `rustc --explain E0004`.
-error: could not compile `hiker` (lib) due to 1 previous error
-warning: build failed, waiting for other jobs to finish...
-error: could not compile `hiker` (lib test) due to 1 previous error
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.87s
+     Running unittests src/lib.rs (target/debug/deps/hiker-2b14b2fd0ea5c14e)
+     Running tests/lib_tests.rs (target/debug/deps/lib_tests-1ae1719d59b72724)
+thread 'life_the_universe_and_everything' panicked at tests/lib_tests.rs:8:5:
+assertion `left == right` failed
+  left: 20
+ right: 17
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: test failed, to rerun pass `--test lib_tests`
