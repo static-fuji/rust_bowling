@@ -603,5 +603,21 @@
       0,
       181480
     ]
+  },
+  {
+    "duration": 0.847627,
+    "colour": "amber",
+    "predicted": "none",
+    "revert_if_wrong": "off",
+    "index": 38,
+    "time": [
+      2024,
+      11,
+      5,
+      16,
+      11,
+      5,
+      140086
+    ]
   }
 ]

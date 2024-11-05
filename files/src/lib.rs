@@ -26,6 +26,24 @@ pub fn answer(score_str: &str) -> u32 {
     total_score
 }
 
+fn strike_bonus (frames: &[&str], frame_index: usize) -> u32 {
+    let mut bonus = 0;
+
+    if let Some(next_frame) = frames.get(frame_index + 1) {
+        if next_frame == &"X" {
+            bonus += 10;
+
+            if let Some(next_next_frame) = frames.get(frame_index + 2) {
+                bonus += first_roll_value(next_next_frame);
+            }
+        } else {
+            bonus += sum_rolls_in_frame(next_frame);
+        }
+    }
+
+    bonus
+}
+
 fn parse_roll(roll: char) -> u32 {
     match roll {
         '/' => 0,
