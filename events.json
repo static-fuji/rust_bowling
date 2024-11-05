@@ -283,5 +283,21 @@
       2,
       59719
     ]
+  },
+  {
+    "duration": 0.93316,
+    "colour": "amber",
+    "predicted": "none",
+    "revert_if_wrong": "off",
+    "index": 18,
+    "time": [
+      2024,
+      11,
+      5,
+      15,
+      39,
+      57,
+      315143
+    ]
   }
 ]

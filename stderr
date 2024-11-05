@@ -1,23 +1,14 @@
    Compiling hiker v0.1.0 (/sandbox)
-error[E0425]: cannot find function `perse_roll` in this scope
-  --> src/lib.rs:10:26
-   |
-10 |         let first_roll = perse_roll(frame.chars().nth(0).unwrap());
-   |                          ^^^^^^^^^^ help: a function with a similar name exists: `parse_roll`
-...
-26 | fn parse_roll(roll: char) -> u32 {
-   | -------------------------------- similarly named function `parse_roll` defined here
-
-error[E0425]: cannot find function `perce_roll` in this scope
+error[E0425]: cannot find function `parce_roll` in this scope
   --> src/lib.rs:11:27
    |
-11 |         let second_roll = perce_roll(frame.chars().nth(1).unwrap_or('0'));
+11 |         let second_roll = parce_roll(frame.chars().nth(1).unwrap_or('0'));
    |                           ^^^^^^^^^^ help: a function with a similar name exists: `parse_roll`
 ...
 26 | fn parse_roll(roll: char) -> u32 {
    | -------------------------------- similarly named function `parse_roll` defined here
 
 For more information about this error, try `rustc --explain E0425`.
-error: could not compile `hiker` (lib test) due to 2 previous errors
+error: could not compile `hiker` (lib test) due to 1 previous error
 warning: build failed, waiting for other jobs to finish...
-error: could not compile `hiker` (lib) due to 2 previous errors
+error: could not compile `hiker` (lib) due to 1 previous error
