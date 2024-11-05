@@ -1,19 +1,5 @@
    Compiling hiker v0.1.0 (/sandbox)
-error[E0308]: mismatched types
-  --> src/lib.rs:17:5
-   |
-3  | pub fn answer(score_str: &str) -> i32 {
-   |                                   --- expected `i32` because of return type
-...
-17 |     total_score
-   |     ^^^^^^^^^^^ expected `i32`, found `u32`
-   |
-help: you can convert a `u32` to an `i32` and panic if the converted value doesn't fit
-   |
-17 |     total_score.try_into().unwrap()
-   |                ++++++++++++++++++++
-
-For more information about this error, try `rustc --explain E0308`.
-error: could not compile `hiker` (lib test) due to 1 previous error
-warning: build failed, waiting for other jobs to finish...
-error: could not compile `hiker` (lib) due to 1 previous error
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.93s
+     Running unittests src/lib.rs (target/debug/deps/hiker-2b14b2fd0ea5c14e)
+     Running tests/lib_tests.rs (target/debug/deps/lib_tests-1ae1719d59b72724)
+   Doc-tests hiker
