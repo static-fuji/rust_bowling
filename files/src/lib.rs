@@ -32,12 +32,16 @@ fn strike_bonus(frames: &[&str], frame_index: usize) -> u32 {
     let mut bonus = 0;
 
     if let Some(next_frame) = frames.get(frame_index + 1) {
+        let next_first_frame = parse_roll(next_frame.chars().next().unwrap());
+        let next_second_frame_char = next_frame.chars().nth(1).unwrap_or('0');
         if next_frame == &"X" {
             bonus += 10;
 
             if let Some(next_next_frame) = frames.get(frame_index + 2) {
                 bonus += first_roll_value(next_next_frame);
             }
+        } else if next_second_frame_char == '/' {
+            bonus += sum_rolls(next_frame) + 10 - next_first_frame;
         } else {
             bonus += sum_rolls(next_frame);
         }
