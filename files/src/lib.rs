@@ -6,6 +6,8 @@ pub fn answer(score_str: &str) -> u32 {
     let frames: Vec<&str> = score_str.split('|').filter(|&s| !s.is_empty()).collect();
 
     while frame_index < frames.len() && frame_index < 10 {
+        let frame = frames[frame_index];
+        
         if frame == 'X' {
             total_score += 10 + bonus_for_strike(&frames, frame_index);
             frame_index += 1;

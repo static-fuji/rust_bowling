@@ -1,23 +1,35 @@
    Compiling hiker v0.1.0 (/sandbox)
-error[E0425]: cannot find value `frame` in this scope
- --> src/lib.rs:9:12
-  |
-9 |         if frame == 'X' {
-  |            ^^^^^ help: a local variable with a similar name exists: `frames`
+error[E0277]: can't compare `&str` with `char`
+  --> src/lib.rs:11:18
+   |
+11 |         if frame == 'X' {
+   |                  ^^ no implementation for `&str == char`
+   |
+   = help: the trait `PartialEq<char>` is not implemented for `&str`
+   = help: the following other types implement trait `PartialEq<Rhs>`:
+             `&'a str` implements `PartialEq<OsString>`
+             `&'a str` implements `PartialEq<String>`
+             `&'b str` implements `PartialEq<Cow<'a, str>>`
+             `str` implements `PartialEq<Cow<'a, str>>`
+             `str` implements `PartialEq<OsStr>`
+             `str` implements `PartialEq<OsString>`
+             `str` implements `PartialEq<String>`
+             `str` implements `PartialEq`
 
 error[E0425]: cannot find function `bonus_for_strike` in this scope
-  --> src/lib.rs:10:33
+  --> src/lib.rs:12:33
    |
-10 |             total_score += 10 + bonus_for_strike(&frames, frame_index);
+12 |             total_score += 10 + bonus_for_strike(&frames, frame_index);
    |                                 ^^^^^^^^^^^^^^^^ not found in this scope
 
 error[E0425]: cannot find function `sum_rolls_in_frame` in this scope
-  --> src/lib.rs:40:22
+  --> src/lib.rs:42:22
    |
-40 |             bonus += sum_rolls_in_frame(next_frame);
+42 |             bonus += sum_rolls_in_frame(next_frame);
    |                      ^^^^^^^^^^^^^^^^^^ not found in this scope
 
-For more information about this error, try `rustc --explain E0425`.
+Some errors have detailed explanations: E0277, E0425.
+For more information about an error, try `rustc --explain E0277`.
 error: could not compile `hiker` (lib) due to 3 previous errors
 warning: build failed, waiting for other jobs to finish...
 error: could not compile `hiker` (lib test) due to 3 previous errors
