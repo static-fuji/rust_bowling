@@ -6,17 +6,22 @@ pub fn answer(score_str: &str) -> u32 {
     let frames: Vec<&str> = score_str.split('|').filter(|&s| !s.is_empty()).collect();
 
     while frame_index < frames.len() && frame_index < 10 {
-        let frame = frames[frame_index];
-        let first_roll = parse_roll(frame.chars().next().unwrap());
-        let second_roll = parse_roll(frame.chars().nth(1).unwrap_or('0'));
+        if frame == "X" {
+            // Strike: 10 plus next two rolls
+            total_score += 10 + bonus_for_strike(&frames, frame_index);
+            frame_index += 1;
+        } else {
+            let frame = frames[frame_index];
+            let first_roll = parse_roll(frame.chars().next().unwrap());
+            let second_roll = parse_roll(frame.chars().nth(1).unwrap_or('0'));
 
-        total_score += first_roll + second_roll;
+            total_score += first_roll + second_roll;
 
-        if frame.chars().nth(1).unwrap_or('0') == '/' {
-            total_score += spare_bonus(&frames, frame_index) + 10 - first_roll;
+            if frame.chars().nth(1).unwrap_or('0') == '/' {
+                total_score += spare_bonus(&frames, frame_index) + 10 - first_roll;
+            }
+            frame_index += 1;
         }
-
-        frame_index += 1;
     }
 
     total_score

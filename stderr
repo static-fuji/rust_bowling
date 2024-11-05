@@ -1,10 +1,17 @@
    Compiling hiker v0.1.0 (/sandbox)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.90s
-     Running unittests src/lib.rs (target/debug/deps/hiker-2b14b2fd0ea5c14e)
-     Running tests/lib_tests.rs (target/debug/deps/lib_tests-1ae1719d59b72724)
-thread 'life_the_universe_and_everything' panicked at tests/lib_tests.rs:12:5:
-assertion `left == right` failed
-  left: 60
- right: 30
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-error: test failed, to rerun pass `--test lib_tests`
+error[E0425]: cannot find value `frame` in this scope
+ --> src/lib.rs:9:12
+  |
+9 |         if frame == "X" {
+  |            ^^^^^ help: a local variable with a similar name exists: `frames`
+
+error[E0425]: cannot find function `bonus_for_strike` in this scope
+  --> src/lib.rs:11:33
+   |
+11 |             total_score += 10 + bonus_for_strike(&frames, frame_index);
+   |                                 ^^^^^^^^^^^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `hiker` (lib test) due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `hiker` (lib) due to 2 previous errors
